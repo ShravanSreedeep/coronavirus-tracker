@@ -5,14 +5,23 @@
 <br>
 <br>
 <br>
+<b>To get the total list of states and countries with the latest active corona cases :</b>
+<br>
+<br>
 <br>
 ![alt text](https://github.com/ShravanSreedeep/coronavirus-tracker/blob/main/outputs/allStats.png)
 <br>
 <br>
 <br>
+<b>To get the latest total active corona cases around the world :</b>
+<br>
+<br>
 <br>
 ![alt text](https://github.com/ShravanSreedeep/coronavirus-tracker/blob/main/outputs/totalCases.png)
 <br>
+<br>
+<br>
+<b>To get the total list of states with the latest active corona cases of a particular country :</b>
 <br>
 <br>
 <br>

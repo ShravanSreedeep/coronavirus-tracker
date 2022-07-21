@@ -26,7 +26,7 @@ public class Controller{
 		return "Total Cases : " + cs.totalCase();
 	}
 	
-	@RequestMapping("/country/{country}")
+	@RequestMapping("/{country}")
 	public List<Model> countryCase(@PathVariable("country") String country) {
 		System.out.print(country);	
 		return cs.countryCase(country) ;

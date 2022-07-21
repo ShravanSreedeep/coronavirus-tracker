@@ -6,14 +6,14 @@
 <br>
 <br>
 <br>
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ShravanSreedeep/coronavirus-tracker/blob/main/outputs/allStats.png)
 <br>
 <br>
 <br>
 <br>
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ShravanSreedeep/coronavirus-tracker/blob/main/outputs/totalCases.png)
 <br>
 <br>
 <br>
 <br>
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ShravanSreedeep/coronavirus-tracker/blob/main/outputs/countryCases.png)

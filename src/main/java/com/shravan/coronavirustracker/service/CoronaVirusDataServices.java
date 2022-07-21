@@ -78,7 +78,7 @@ public class CoronaVirusDataServices {
 				System.out.println(allStats.get(i));
 				
 			}
-			//System.out.print(allStats.get(i).getCountry());
+			
 		}
 		
 		

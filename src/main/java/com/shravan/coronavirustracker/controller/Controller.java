@@ -3,6 +3,7 @@ package com.shravan.coronavirustracker.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,12 @@ public class Controller{
 	@RequestMapping("/total")
 	public String totalCase(){
 		return "Total Cases : " + cs.totalCase();
+	}
+	
+	@RequestMapping("/country/{country}")
+	public List<Model> countryCase(@PathVariable("country") String country) {
+		System.out.print(country);	
+		return cs.countryCase(country) ;
 	}
 	
 	

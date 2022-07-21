@@ -67,4 +67,22 @@ public class CoronaVirusDataServices {
 		
 		return this.totalCase;
 	}
+	
+	public List<Model> countryCase(String country) {
+		List<Model> countryStats = new ArrayList<>();
+		
+		for(int i=0;i<allStats.size();i++) {
+			
+			if(allStats.get(i).getCountry().equals(country)) {
+				countryStats.add(allStats.get(i));
+				System.out.println(allStats.get(i));
+				
+			}
+			//System.out.print(allStats.get(i).getCountry());
+		}
+		
+		
+		return countryStats;
+		
+	}
 }

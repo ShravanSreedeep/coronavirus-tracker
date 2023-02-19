@@ -27,7 +27,7 @@ public class CoronaVirusDataServices {
 	
 	private static String VIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 	private List<Model> allStats = new ArrayList<>();
-	private int totalCase = 0;
+	
 	@PostConstruct
 	@Autowired
 	@Scheduled(cron = "* * 1 * * *")
@@ -45,6 +45,7 @@ public class CoronaVirusDataServices {
 		HttpResponse<String> httpResponse = client.send(request, HttpResponse.BodyHandlers.ofString());
 		System.out.println(httpResponse.body());
 		StringReader body = new StringReader(httpResponse.body());
+		@SuppressWarnings("deprecation")
 		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withHeader().parse(body);
 		for (CSVRecord record : records) {
 			Model location = new Model();
@@ -53,7 +54,6 @@ public class CoronaVirusDataServices {
 		    location.setCountry(record.get("Country/Region"));
 		    System.out.println(location.getCountry());
 		    location.setLatestTotal(Integer.parseInt(record.get(record.size()-1)));
-		    this.totalCase += Integer.parseInt(record.get(record.size()-1));
 		    System.out.println(location.getLatestTotal());
 		    newStats.add(location);
 		}
@@ -65,7 +65,11 @@ public class CoronaVirusDataServices {
 	
 	public int totalCase() {
 		
-		return this.totalCase;
+		int totalCase = 0;
+		for(int i=0;i<allStats.size();i++) {
+			totalCase += allStats.get(i).getLatestTotal();
+		}
+		return totalCase;
 	}
 	
 	public List<Model> countryCase(String country) {
